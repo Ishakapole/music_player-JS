@@ -1,0 +1,430 @@
+/* Default light mode styles */
+body {
+  background: linear-gradient(45deg, #f0f0f0, #d9d9d9, #f0f0f0, #d9d9d9);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: #000;
+  font-family: 'Arial', sans-serif;
+  transition: background-color .5s, color .5s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  height: 60px;
+}
+
+header .logo {
+  font-size: 3rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+header nav ul li a:hover {
+  color: #e63946;
+}
+
+.player-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: auto;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  cursor: pointer;
+}
+
+.details {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.track-art {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+
+.now-playing {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.track-name {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.track-artist {
+  font-size: 1.2rem;
+  margin: 3%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1px;
+}
+
+.playpause-track, .prev-track, .next-track, .favorite-track {
+  font-size: 12px;
+  padding: 10px;
+  opacity: 0.8;
+  transition: opacity .2s;
+}
+
+.playpause-track:hover, .prev-track:hover, .next-track:hover, .favorite-track:hover {
+  opacity: 1.0;
+}
+
+.slider_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.seek_slider, .volume_slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #000;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+.seek_slider:hover, .volume_slider:hover {
+  opacity: 1.0;
+}
+
+.lyrics_container {
+  margin: 20px 0;
+}
+
+.lyrics {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  max-height: 100px;
+  overflow-y: auto;
+  cursor: pointer;
+}
+
+.playlist-container {
+  width: 35%;
+  margin-left: 20px;
+  max-height: 1000px;
+  overflow-y: visible;
+}
+
+.playlist-container h2 {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.playlist-container ul {
+  list-style: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.playlist-container ul li {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.playlist-container ul li:hover {
+  background-color: lightgray;
+  border-radius: 5px;
+  transform: scale(1.02);
+}
+
+.playlist-container ul li img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 25%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block;
+}
+
+.modal-content .confirmation-message {
+  color: green;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.modal-content button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+.modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#topChartsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#topChartsContainer .song-item {
+  width: 200px;
+  text-align: center;
+}
+
+#topChartsContainer .song-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer .centered-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .social-icons p {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.footer .social-icon img {
+  width: 35px;
+  height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .player-container {
+    flex-direction: column;
+    max-height: 300px;
+  }
+
+  .player {
+    width: 100%;
+  }
+
+  .playlist-container {
+    width: 100%;
+    margin: 20px 0;
+    max-height: 300px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .details {
+    margin-bottom: 10px;
+  }
+
+  .track-art {
+    width: 200px;
+    height: 200px;
+  }
+
+  .track-name {
+    font-size: 1.5rem;
+  }
+
+  .track-artist {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    margin-bottom: 10px;
+  }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: linear-gradient(45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
+  background-size: 400% 400%;
+  color: white;
+}
+
+body.dark-mode header {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+body.dark-mode header nav ul li a {
+  color: #fff;
+}
+
+body.dark-mode header nav ul li a:hover {
+  color: #ff6f61;
+}
+
+body.dark-mode .seek_slider, body.dark-mode .volume_slider {
+  background: #fff;
+}
+
+body.dark-mode .lyrics {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .playlist-container ul li {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .playlist-container ul li:hover {
+  background-color: burlywood;
+}
+
+body.dark-mode .modal {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .modal-content {
+  background-color: #333;
+  color: #eee;
+}
+
+body.dark-mode .footer {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Style for the theme toggle button */
+#theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease, background 0.3s ease;
+  color: black; /* Default color for light mode */
+}
+
+/* Dark mode styling */
+body.dark-mode #theme-toggle {
+  color: white; /* Color for dark mode */
+}
+
+#theme-toggle:hover {
+  color: #ff6f61; /* Change to your preferred hover color */
+}
+
+/* Change icon when switching modes */
+body.dark-mode #theme-icon {
+  content: "\f186"; /* Font Awesome moon icon for dark mode */
+}
+
+#theme-icon {
+  content: "\f185"; /* Font Awesome sun icon for light mode */
+  background: transparent;
+  color: inherit; /* Inherit color from parent button */
+}
+
+/* Add hover effect */
+#theme-toggle:hover {
+  color: #ff6f61; /* Example hover color */
+}

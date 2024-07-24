@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProTunes - Music Player</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body data-theme="light">
+  <header>
+    <div class="logo">ProTunes</div>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="home()"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#" onclick="openSearchModal()"><i class="fa fa-search"></i> Search</a></li>
+        <li><a href="#" onclick="openTopChartsModal()"><i class="fa fa-chart-line"></i> Top Charts</a></li>
+        <li><a href="#" onclick="openSignUpModal()"><i class="fa fa-user-plus"></i> Sign Up</a></li>
+        <li><a href="#" onclick="openLoginModal()"><i class="fa fa-sign-in-alt"></i> Login</a></li>
+        <button id="theme-toggle">Change theme
+          <i id="theme-icon" class="fas fa-sun"></i>  
+        </button>
+      </ul>
+    </nav>
+
+  </header>
+  <div class="player-container">
+    <div class="player">
+      <div class="details">
+        <div class="now-playing">PLAYING x OF y</div>
+        <div class="track-art"></div>
+        <div class="track-name">Track Name</div>
+        <div class="track-artist">Track Artist</div>
+      </div>
+      <div class="buttons">
+        <div class="prev-track" onclick="prevTrack()">
+          <i class="fa fa-step-backward fa-2x"></i>
+        </div>
+        <div class="playpause-track" onclick="playpauseTrack()">
+          <i class="fa fa-play-circle fa-5x"></i>
+        </div>
+        <div class="next-track" onclick="nextTrack()">
+          <i class="fa fa-step-forward fa-2x"></i>
+        </div>
+        <div class="favorite-track" onclick="toggleFavorite()">
+          <i class="fa fa-star fa-2x"></i>
+        </div>
+      </div>
+      <div class="slider_container">
+        <div class="current-time">00:00</div>
+        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+        <div class="total-duration">00:00</div>
+      </div>
+      <div class="slider_container">
+        <i class="fa fa-volume-down"></i>
+        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+        <i class="fa fa-volume-up"></i>
+      </div>
+      <div id="lyrics-container" class="hidden">
+        <p id="lyrics">Lyrics for the song...</p>
+      </div>
+      <button id="toggle-lyrics-btn">Toggle Lyrics</button>      
+    </div>
+    <div class="playlist-container">
+      <h2>Playlist</h2>
+      <ul id="playlist">
+        <!-- Playlist items will be dynamically inserted here -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="searchModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeSearchModal()">&times;</span>
+      <input type="text" id="searchInput" placeholder="Search for songs or artists...">
+      <button onclick="searchTracks()">Search</button>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+
+
+  <div id="topChartsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeTopChartsModal()">&times;</span>
+      <h2>Top Charts</h2>
+      <div id="topChartsContainer">
+        <!-- Songs with images will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>  
+
+  <div id="signUpModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeSignUpModal()">&times;</span>
+      <h2>Sign Up</h2>
+      <input type="text" id="signUpUsername" placeholder="Username">
+      <input type="password" id="signUpPassword" placeholder="Password">
+      <button onclick="signUp()">Sign Up</button>
+      <div id="signUpConfirmation" class="confirmation-message"></div>
+    </div>
+  </div>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLoginModal()">&times;</span>
+      <h2>Login</h2>
+      <input type="text" id="loginUsername" placeholder="Username">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <div id="loginConfirmation" class="confirmation-message"></div> 
+    </div>
+    <div id="usernameDisplay"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="centered-content">
+        <p>© 2024 ProTunes Media Limited All rights reserved.</p>
+    </div>
+    <div class="social-icons">
+        <p>Follow Us </p>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram">
+        </a>
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+            <img src="https://cdn.icon-icons.com/icons2/4048/PNG/512/facebook_logo_icon_257007.png" alt="Facebook">
+        </a>
+        <a href="https://youtube.com" target="_blank" class="social-icon">
+            <img src="https://t3.ftcdn.net/jpg/04/74/05/94/360_F_474059464_qldYuzxaUWEwNTtYBJ44VN89ARuFktHW.jpg" alt="YouTube">
+        </a>
+    </div>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
